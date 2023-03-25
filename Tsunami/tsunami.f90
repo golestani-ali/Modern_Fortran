@@ -14,6 +14,8 @@ program tsunami
     dt = 1.
     dx = 1.
     c = 1.
+
+    real, dimension(grid_size) :: h
     
 
 end program tsunami
