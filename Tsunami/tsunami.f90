@@ -17,5 +17,11 @@ program tsunami
 
     real :: h(grid_size), dh(grid_size)
 
+    if (grid_size <= 0) stop "grid_size must be greater than zero!"
+    if (dt <= 0) stop "dt must be greater than zero!"
+    if (dx <= 0) stop "dx must be greater than zero!"
+    if (c <= 0) stop "c must be greater than zero!"
+
+
 
 end program tsunami
