@@ -29,9 +29,21 @@ program tsunami
         h(i) = exp(-decay * (i - icenter)**2)
     end do init_wave
     
+    time_loop: do n = 1, num_time_steps
 
+        dh(1) = h(1) - h(grid_size)
 
+        do i = 2, grid_size
+            dh(i) = h(i) - h(i-1)
+        end do 
 
+        do i = 1, grid_size
+            h(i) = h(i) - c * dh(i) / dx * dt
+        end do 
+
+        print *, n, h
+
+        end do time_loop
 
 
 end program tsunami
